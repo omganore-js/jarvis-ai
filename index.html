@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050b13">
+  <title>J.A.R.V.I.S. | Voice Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- The background grid and glow give the dashboard its sci-fi look. -->
+  <div class="background-grid" aria-hidden="true"></div>
+  <main class="app-shell">
+    <!-- The header shows the assistant name and its current status. -->
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="JARVIS home">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span><strong>J.A.R.V.I.S.</strong><small>PERSONAL AI INTERFACE</small></span>
+      </a>
+      <div class="system-readout"><span class="readout-dot"></span> SYSTEM READY <span class="readout-divider">/</span> V.09.26</div>
+      <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" aria-label="Mute voice">
+        <span class="sound-icon" aria-hidden="true">♫</span><span id="soundLabel">VOICE ON</span>
+      </button>
+    </header>
+
+    <!-- The main dashboard pairs the glowing reactor with the chat log. -->
+    <section class="dashboard" aria-label="JARVIS voice assistant">
+      <div class="reactor-column">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR AI ASSISTANT <span class="eyebrow-line"></span></div>
+        <div class="reactor-wrap" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="reactor">
+            <div class="reactor-core"><span>J</span></div>
+          </div>
+          <span class="orbit-label orbit-label-top">ARC // 01</span>
+          <span class="orbit-label orbit-label-bottom">POWER 100%</span>
+        </div>
+        <div class="assistant-name">JARVIS<span class="name-period">.</span></div>
+        <div class="assistant-subtitle">JUST A RATHER VERY INTELLIGENT SYSTEM</div>
+        <div class="status-line" aria-live="polite">
+          <span class="status-dot" id="statusDot"></span>
+          <span id="statusText">ONLINE</span>
+        </div>
+        <p class="mic-hint" id="micHint">TAP TO SPEAK <span>·</span> OR TYPE BELOW</p>
+      </div>
+
+      <section class="chat-panel" aria-label="Conversation">
+        <div class="panel-heading">
+          <div><h1>Where should we start?</h1></div>
+        </div>
+        <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <form class="text-form" id="textForm">
+          <label class="sr-only" for="textInput">Type a message for JARVIS</label>
+          <span class="input-prompt" aria-hidden="true">&gt;_</span>
+          <input id="textInput" type="text" placeholder="Type a command or question..." autocomplete="off">
+          <div class="composer-actions">
+            <button class="activate-button" id="activateButton" type="button" aria-label="Activate voice">
+              <span class="mic-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="12" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-4 0h8"></path></svg>
+              </span>
+              <span id="activateLabel">ACTIVATE VOICE</span>
+            </button>
+            <button class="send-button" type="submit" aria-label="Send message"><span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+        <div class="quick-commands">
+          <div class="quick-heading"><span>TRY ASKING</span><span class="quick-line"></span></div>
+          <div class="chip-list">
+            <button type="button" class="command-chip">Introduce yourself</button>
+            <button type="button" class="command-chip">What time is it?</button>
+            <button type="button" class="command-chip">Calculate 25 times 4</button>
+            <button type="button" class="command-chip">Who is Ada Lovelace?</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Small footer readouts make it clear which browser features are in use. -->
+    <footer class="footer">
+      <span><i class="footer-indicator"></i> ENCRYPTED LOCAL SESSION</span>
+      <span>VOICE: <b>WEB SPEECH API</b></span>
+      <span>KNOWLEDGE: <b>WIKIPEDIA</b></span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
